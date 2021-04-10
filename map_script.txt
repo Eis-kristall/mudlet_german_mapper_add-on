@@ -1,0 +1,27 @@
+Zeile 2070  lösche "local function name_search()" raus aus dem Skript
+
+lösche
+local function name_search()
+    local room_name
+    ...
+    return room_name
+end
+---------------------------------------------------------------
+folgendes nur OPTIONAL:
+
+Um den Abstand manuel zu verändern - verändere Skriptzeile wie unten abgebildet und bastel extra Skript
+
+Neues Skript "a_mapperconf" 
+a_mapperconf = {}
+--Standardabstand zwischen zwei Raeumen Normal Ebene 3 Normal 5
+a_mapperconf.scale = 5  
+
+Änder Zeile 741 nach:
+ 
+local d = a_mapperconf.scale
+
+local coordmap = {
+  [1] = {0,d,0},      [2] = {d,d,0},      [3] = {-d,d,0},     [4] = {d,0,0},
+   [5] = {-d,0,0},     [6] = {0,-d,0},     [7] = {d,-d,0},     [8] = {-d,-d,0},
+   [9] = {0,0,d},      [10] = {0,0,-d},    [11] = {0,0,0},     [12] = {0,0,0},
+}
